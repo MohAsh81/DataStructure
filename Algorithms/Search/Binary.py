@@ -1,17 +1,16 @@
 def binarysearch(lst, elm):
-    def search_helper(lst, elm, left, right):
-        if left > right:
-            return None
-        
+    lst = sorted(lst)
+    left = 0
+    right = len(lst) - 1
+
+    while left <= right:
         mid = (left + right) // 2
 
         if lst[mid] == elm:
             return mid
         elif lst[mid] < elm:
-            return search_helper(lst, elm, mid + 1, right)
+            left = mid + 1
         else:
-            return search_helper(lst, elm, left, mid - 1)
+            right = mid - 1
 
-    # Assuming list is sorted, or sort it once outside.
-    lst = sorted(lst)
-    return search_helper(lst, elm, 0, len(lst) - 1)
+    return None  # Element not found
