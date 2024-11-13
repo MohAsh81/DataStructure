@@ -15,6 +15,3 @@ def binarysearch(lst, elm):
     # Assuming list is sorted, or sort it once outside.
     lst = sorted(lst)
     return search_helper(lst, elm, 0, len(lst) - 1)
-
-
-print(binarysearch([1, 5, 7, 2, 4, 9, 0, 6, 10, 3, 8], 3))
